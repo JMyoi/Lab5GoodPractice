@@ -13,7 +13,17 @@ public class Student {
     }
     // Implement getters and setters for the Student class if needed
     // Implement the equals method
+    public boolean equals(Object otherObject){
+        if(otherObject instanceof Student){
+            Student other = (Student) otherObject;
+            return name.equals(other.name) && address.equals(other.address) && emplID == other.emplID && gpa == other.gpa;
+        }
+        return false;
+    }
     // Implement the toString method
+    public String toString(){
+        return getClass().getName() + "[name="+name+",emplid="+emplID+",gpa="+gpa+address.toString();
+    }
     // Implement the copy method
     // Implement a copy constructor
 }

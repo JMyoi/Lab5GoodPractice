@@ -14,10 +14,14 @@ public class Address {
 
     // Implement getters and setters for the Address class if needed
     public String toString(){
-
+        return getClass().getName() + "[Street="+street+",city="+city+",state="+state+",zip code="+zipCode+"]";
     }
     public boolean equals(Object otherObject){
-        Address other = (Address) otherObject;
+        if(otherObject instanceof Address) {
+            Address other = (Address) otherObject;
+            return street.equals(other.street) && city.equals(other.city) && state.equals(other.state) && zipCode.equals(other.zipCode);
+        }
+        return false;
     }
 
 }
