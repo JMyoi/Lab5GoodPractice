@@ -11,6 +11,9 @@ public class Student {
         this.gpa = gpa;
         this.address = address;
     }
+    public void setName(String N){
+        this.name = N;
+    }
     // Implement getters and setters for the Student class if needed
     // Implement the equals method
     public boolean equals(Object otherObject){
@@ -22,8 +25,22 @@ public class Student {
     }
     // Implement the toString method
     public String toString(){
-        return getClass().getName() + "[name="+name+",emplid="+emplID+",gpa="+gpa+address.toString();
+        return getClass().getName() + "[name="+name+", emplid="+emplID+", gpa="+gpa+address.toString();
+    }
+
+    // Implement a copy constructor
+    public Student(Student toCopy){
+        this.name = toCopy.name;
+        this.emplID = toCopy.emplID;
+        this.gpa = toCopy.gpa;
+        this.address = new Address(toCopy.address);
     }
     // Implement the copy method
-    // Implement a copy constructor
+    public void copy(Student toCopy){
+        this.name = toCopy.name;
+        this.emplID = toCopy.emplID;
+        this.gpa = toCopy.gpa;
+        this.address = new Address(toCopy.address);
+    }
+
 }
